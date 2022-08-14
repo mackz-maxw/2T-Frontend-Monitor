@@ -8,16 +8,54 @@
 import {ref,onMounted} from 'vue';
 import * as echarts from 'echarts';
 
+type seriesType = 
+  {
+      name: string,
+      type: 'line',
+      stack: 'Total',
+      areaStyle: {},
+      smooth: true,
+      emphasis: {
+        focus: 'series'
+      },
+      data: Array<number>,
+      itemStyle: {
+        color: '#3a57fa'
+      }
+};
+
+interface Props {
+  xAxisData: Array<string>;
+  series: Array<seriesType>;
+}
+const props = defineProps<Props>();
+
 
 type EChartsOption = echarts.EChartsOption
 
-let chartDom = ref(null);
+let chartDom = ref<null|HTMLElement>(null);
 let option: EChartsOption;
 
-option= {
-  title: {
-    text: 'Stacked Area Chart'
-  },
+function seriesParam() {
+  let seriesArray:Array<seriesType>=[];
+  for(let item of props.series){
+    seriesArray.push(Object.assign({
+      type: 'line',
+      stack: 'Total',
+      areaStyle: {},
+      smooth: true,
+      emphasis: {
+        focus: 'series'
+      },
+      itemStyle: {
+        color: '#3a57fa'
+      }
+    },item));
+  }
+  return seriesArray;
+}
+
+option = {
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -26,9 +64,6 @@ option= {
         backgroundColor: '#6a7985'
       }
     }
-  },
-  legend: {
-    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
   },
   toolbox: {
     feature: {
@@ -45,7 +80,7 @@ option= {
     {
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: props.xAxisData
     }
   ],
   yAxis: [
@@ -53,67 +88,12 @@ option= {
       type: 'value'
     }
   ],
-  series: [
-    {
-      name: 'Email',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [120, 132, 101, 134, 90, 230, 210]
-    },
-    {
-      name: 'Union Ads',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [220, 182, 191, 234, 290, 330, 310]
-    },
-    {
-      name: 'Video Ads',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [150, 232, 201, 154, 190, 330, 410]
-    },
-    {
-      name: 'Direct',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [320, 332, 301, 334, 390, 330, 320]
-    },
-    {
-      name: 'Search Engine',
-      type: 'line',
-      stack: 'Total',
-      label: {
-        show: true,
-        position: 'top'
-      },
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [820, 932, 901, 934, 1290, 1330, 1320]
-    }
-  ]
+  series: seriesParam()
 };
 
 onMounted(()=>{
-    chartDom.value.setAttribute("_echarts_instance_", "");
-    let myChart = echarts.init(chartDom.value as unknown as HTMLElement);
+    chartDom.value?.setAttribute("_echarts_instance_", "");
+    let myChart = echarts.init(chartDom.value!);
     myChart.setOption(option);
 })
 </script>
