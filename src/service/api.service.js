@@ -1,44 +1,44 @@
-import Vue from "vue";
 //引入axios拦截器
 import axios from "@/service/interceptors.service";
-import VueAxios from "vue-axios";
 
 const ApiService = {
-  //初始化方法用vue-axios组件
-  init() {
-    Vue.use(VueAxios, axios);
-    //设置api的baseURL
-    Vue.axios.defaults.baseURL = "https://127.0.0.1:3000";
-  },
-   
+
   //创建不同的网络请求方法
-  get(resource, slug = "", params) {
-    return Vue.axios.get(`${resource}/${slug}`, { params }).catch(error => {
+  get(resource, slug = "", params,headers) {
+    return axios
+    .get(`${resource}/${slug}`, { params,headers})
+    .catch(error => {
       throw error.response;
     });
   },
 
-  post(resource, params, config) {
-    return Vue.axios.post(`${resource}`, params, config).catch(error => {
+  post(resource, params, headers) {
+    return axios
+    .post(`${resource}`, params, {headers})
+    .catch(error => {
       throw error.response;
     });
   },
 
-  patch(resource, params, slug = "") {
-    return Vue.axios.patch(`${resource}/${slug}`, params).catch(error => {
+  patch(resource, params, slug = "",headers) {
+    return axios
+    .patch(`${resource}/${slug}`, params,{headers})
+    .catch(error => {
       throw error.response;
     });
   },
 
-  put(resource, params, slug = "") {
-    return Vue.axios.put(`${resource}/${slug}`, params).catch(error => {
+  put(resource, params, slug = "",headers) {
+    return axios
+    .put(`${resource}/${slug}`, params,{headers})
+    .catch(error => {
       throw error.response;
     });
   },
 
-  delete(resource, params, slug = "") {
-    return Vue.axios
-      .delete(`${resource}/${slug}`, { data: params })
+  delete(resource, params, slug = "",headers) {
+    return axios
+      .delete(`${resource}/${slug}`, { params ,headers})
       .catch(error => {
         throw error.response;
       });

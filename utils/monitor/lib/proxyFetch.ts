@@ -2,8 +2,8 @@ import tracker from "../utils/tracker";
 
 export function proxyFetch(){
     if (window.fetch) {
-        let _origin_fetch = window.fetch
-        window.fetch = new Proxy(window.fetch,{
+        let oldFetch = window.fetch
+        window.fetch = new Proxy(oldFetch,{
             apply:function(target,thisArg,argumentsList:[input: URL | RequestInfo, init?: RequestInit | undefined]){
                 let monitorFlag=false;//是否监听该接口标记
                 let startTime = Date.now();//请求开始时间

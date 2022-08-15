@@ -39,9 +39,13 @@ import tracker from "../utils/tracker";
 // }
 
 export function proxyXHR() {
-  XMLHttpRequest.prototype.open=new Proxy(XMLHttpRequest.prototype.open,{ 
+  let oldOpen=XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open=new Proxy(oldOpen,{ 
     apply:function(target,thisArg,argumentsList:[method: string, url: string | URL, async: boolean, username?: string | null | undefined, password?: string | null | undefined]){
-      if (!argumentsList[1].toString().match(/upload/) && !argumentsList[1].toString().match(/sockjs/)) {
+      if(typeof argumentsList[1]!=='string'){
+        argumentsList[1]=argumentsList[1].toString();
+      }
+      if (!argumentsList[1].match(/upload/) && !argumentsList[1].match(/sockjs/)) {
         thisArg.logData = argumentsList;
       }else{
         thisArg.logData = [];
@@ -51,7 +55,8 @@ export function proxyXHR() {
         return target.apply(thisArg,argumentsList) 
     } 
 });
-  XMLHttpRequest.prototype.send=new Proxy(XMLHttpRequest.prototype.send,{
+let oldSend=XMLHttpRequest.prototype.send
+  XMLHttpRequest.prototype.send=new Proxy(oldSend,{
     apply:function(target,thisArg,argumentsList:[body?: Document | XMLHttpRequestBodyInit | null | undefined]){
       if (thisArg.logData.length>0) {
         console.log('thisArg.logData',thisArg.logData);
