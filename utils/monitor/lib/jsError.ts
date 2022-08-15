@@ -3,6 +3,24 @@ import getSelector from "../utils/getSelector";
 import tracker from "../utils/tracker";
 
 export function injectJsError() {
+
+  var oldError = console.error;
+    console.error = new Proxy(console.error,{
+      apply:function (target,thisArg,...argumentList) {
+      console.log('error+++++++++++',argumentList)
+      tracker.send({
+        kind: "stability", // 监控指标的大类，稳定性
+        type: "customError", // 资源获取错误
+        message: argumentList[0], // 报错信息
+      });
+      // 如果onerror重写成功，就无需在这里进行上报了
+      // !jsMonitorStarted && siftAndMakeUpMessage(errorMsg, url, lineNumber, columnNumber, errorObj);
+      return target.apply(thisArg, argumentList);
+    }
+  }
+    )
+
+
   // 监听全局未捕获的错误
   window.addEventListener(
     "error",
@@ -45,6 +63,7 @@ export function injectJsError() {
         let column = 0;
         let stack = "";
         let reason = event.reason;
+        console.log('reason',reason)
         if (typeof reason === "string") {
           message = reason;
         } else if (typeof reason === "object") {
@@ -72,6 +91,7 @@ export function injectJsError() {
 }
 
 function getLines(stack: string) {
+  console.log('stack',stack);
   return stack
     .split("\n")
     .slice(1)

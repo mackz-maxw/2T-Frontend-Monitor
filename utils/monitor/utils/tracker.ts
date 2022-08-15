@@ -38,9 +38,7 @@ class SendTracker {
     // }
     console.log("log", log);
     // 接入日志系统，此处以阿里云为例
-    let body = JSON.stringify({
-      __logs__: [log],
-    });
+    let body = JSON.stringify(log);
     mXhr.open("POST", this.url, true);
     mXhr.setRequestHeader("Content-Type", "application/json");
     mXhr.setRequestHeader("x-log-apiversion", "1.0.0");
