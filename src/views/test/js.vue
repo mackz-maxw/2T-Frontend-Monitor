@@ -28,7 +28,6 @@
 function errorClick():void{
         window.someVar.error = "error";
       }
-
       function promiseErrorClick():void {
         new Promise(function (resolve, reject) {
           window.someVar.error = "error";
@@ -47,9 +46,7 @@ function errorClick():void{
         {
           return Promise.reject('Hello, Fundebug!');
         }
-
         var r = foo();
-
         setTimeout(() =>
         {
           r.catch(e =>{});
@@ -58,5 +55,4 @@ function errorClick():void{
 </script>
 
 <style>
-
 </style>

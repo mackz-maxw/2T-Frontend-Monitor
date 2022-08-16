@@ -35,7 +35,6 @@ function sendSuccess() {
         };
         xhr.send();
       }
-
       function sendError() {
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "/error", true);
@@ -48,12 +47,10 @@ function sendSuccess() {
         };
         xhr.send("name=lyy");
       }
-
       function sendAxios(){
         ApiService.post('/success',{say:"hello"})
       }
 </script>
 
 <style>
-
 </style>
