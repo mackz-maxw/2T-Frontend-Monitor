@@ -14,7 +14,7 @@
 import { useRoute, useRouter } from 'vue-router';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
-import NavBar from './components/NavBar.vue';
+import NavBar from './components/NavBar/NavBar.vue';
 
 export default {
     setup () {

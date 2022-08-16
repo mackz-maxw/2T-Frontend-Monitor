@@ -10,7 +10,7 @@ const idGen = () => {
   return new Date().getTime();
 };
 export default {
-  name: "HelloEcharts",
+  name: "MCharts",
   props: {
     height: {
       type: String,
