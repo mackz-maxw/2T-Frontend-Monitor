@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path';
 const srcPath = path.resolve(__dirname, 'src');
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,8 +19,12 @@ export default defineConfig({
 				target: ' http://monitor-api.twotomatoes.org.cn:10086', // 日志服务器  
 				changeOrigin: true
 			},
-      '/logstores': {
-				target: 'http://127.0.0.1:3000', // 目标服务  
+			[`${loadEnv('production', process.cwd()).VITE_APP_BASE_API}`]: {
+				target: ' http://monitor-api.twotomatoes.org.cn:10086', // 目标服务  
+				changeOrigin: true
+			},
+			[`${loadEnv('development', process.cwd()).VITE_APP_BASE_API}`]: {
+				target: ' http://monitor-api.twotomatoes.org.cn:10086', // 目标服务  
 				changeOrigin: true
 			}
 		}

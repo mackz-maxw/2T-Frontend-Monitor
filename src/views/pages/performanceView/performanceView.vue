@@ -191,9 +191,9 @@
 </template>
 
 <script lang="ts">
-import HelloEcharts from "./bars/userPie.vue";
+import HelloEcharts from "../bars/userPie.vue";
 // import echarts from 'echarts';
-import { option1, option2 } from "./bars/option";
+import { option1, option2 } from "./option";
 
 export default {
     name: "PerformanceView",

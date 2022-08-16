@@ -59,9 +59,9 @@
 
 
 <script lang="ts">
-import HelloEcharts from "./bars/userPie.vue";
+import HelloEcharts from "../bars/userPie.vue";
 // import echarts from 'echarts';
-import { option1, option2, option3 } from "./bars/optionHealth";
+import { option1, option2, option3 } from "./optionHealth";
 
 export default {
     name: "HealthState",
