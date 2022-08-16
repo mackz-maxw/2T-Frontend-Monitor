@@ -1,22 +1,44 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <div class="container clearfix">
+    <Nav></Nav>
+    <div class="layout">
+      <CustomSlider></CustomSlider>
+    </div>
+  </div> -->
+  <NavBar></NavBar>
+  <router-view></router-view>
 </template>
 
-<style scoped>
+<script lang = 'ts'>
+// import { defineComponent, defineAsyncComponent} from "vue";
+import { useRoute, useRouter } from 'vue-router';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap';
+import NavBar from './components/NavBar/NavBar.vue';
+
+export default {
+    setup () {
+      const route = useRoute
+      const router = useRouter()
+    },
+    name: "App",
+    components:{
+      NavBar
+  }
+}
+// export default defineComponent({
+//   name: "App",
+//   components: {
+//     Nav: defineAsyncComponent(() => import("./components/Nav.vue")),
+//     CustomSlider: defineAsyncComponent(
+//       () => import("./components/CustomSlider.vue")
+//     )
+//   }
+// })
+</script>
+
+
+<style lang="scss" scoped>
 .logo {
   height: 6em;
   padding: 1.5em;

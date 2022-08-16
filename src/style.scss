@@ -79,3 +79,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(120,120,255,111));
+  -webkit-filter: drop-shadow(0 0 2em rgba(120,120,255,111));
+}
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em rgba(120,120,255,111));
+  -webkit-filter: drop-shadow(0 0 2em rgba(120,120,255,111));
+}
