@@ -12,9 +12,12 @@ ______
       ```import { option1, option2 } from "./bars/option";```
       <br>
       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2）只需要去https://echarts.apache.org/examples/zh  (或类似的网站) 找到对应的JS代码，模仿json文件将网页提供的代码粘贴到JSON文件里面即可，注意!如有option={}以外的(i.e. var value = 7)  一般放在最上面   
-       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3)  在要插入的地方 输入类似```<HelloEcharts :option="option" />``` 具体实现与script相结合
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3)  在要插入的地方 输入类似 ```<HelloEcharts :option="option" />``` 具体实现与script相结合
       <br>
       <hr>
-      json 默认格式 ```export const option ={}```
+
+     
+##  重要！！！
+   如果图没有正常加载等待修复resize bug即可
       
       
