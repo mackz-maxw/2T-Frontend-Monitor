@@ -51,7 +51,11 @@
                         <h6>页面加载耗时分段数量占比</h6>
                     </div>
                     <div class="card-body">
+<<<<<<< HEAD
                         <MCharts :option="option" />
+=======
+                        <HelloEcharts :option="option" />
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
                         <!-- <userPie /> -->
                     </div>
                 </div>
@@ -145,7 +149,11 @@
                         接口请求耗时分段数量占比
                     </div>
                     <div class="card-body">
+<<<<<<< HEAD
                         <MCharts :option="option" />
+=======
+                        <HelloEcharts :option="option" />
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
                     </div>
                 </div>
             </div>
@@ -191,14 +199,22 @@
 </template>
 
 <script lang="ts">
+<<<<<<< HEAD
 import MCharts from "@/components/MCharts/MCharts.vue";
+=======
+import HelloEcharts from "../bars/userPie.vue";
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
 // import echarts from 'echarts';
 import { option1, option2 } from "./option";
 
 export default {
     name: "PerformanceView",
   components: {
+<<<<<<< HEAD
     MCharts,
+=======
+    HelloEcharts,
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
   },
 
   data() {
@@ -207,6 +223,25 @@ export default {
       width: "400px",
     };
   },
+<<<<<<< HEAD
+=======
+//   methods: {
+//     changeWidth() {
+//       if (this.width == "600px") {
+//         this.width = "800px";
+//       } else {
+//         this.width = "600px";
+//       }
+//     },
+//     changeOption() {
+//       if (this.option == option1) {
+//         this.option = option2;
+//       } else {
+//         this.option = option1;
+//       }
+//     }
+//   }
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
 }
 
 </script>

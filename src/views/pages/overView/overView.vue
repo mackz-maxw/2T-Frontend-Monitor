@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="container-fluid">
         <div class="row-title">
             <div class="col-md-12 fw-bold fs-4">核心数据</div>  
@@ -241,11 +242,16 @@
                 </div>
             </div>
         </div>   
+=======
+    <div>
+        overview
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
     </div>
 </template>
 
 
 <script>
+<<<<<<< HEAD
 import MCharts from "@/components/MCharts/MCharts.vue";
 import { option1, option2} from "./option.js";
 export default {
@@ -260,6 +266,10 @@ export default {
       width: "400px",
     };
   },
+=======
+export default {
+    name: "roleList",
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
 }
 </script>
 

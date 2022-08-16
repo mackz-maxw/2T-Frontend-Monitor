@@ -5,8 +5,11 @@ import PerformanceView from '../views/pages/performanceView/performanceView.vue'
 import JsView from '../views/test/js.vue';
 import NetworkView from '../views/test/network.vue';
 import DangerView from '../views/pages/dangerView/dangerView.vue';
+<<<<<<< HEAD
 import JkhsfxView from '../views/pages/jkhsfxView/jkhsfxView.vue';
 import YmxnfxView from '../views/pages/ymxnfxView/ymxnfxView.vue';
+=======
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
 
 const routes = [
     {
@@ -48,6 +51,7 @@ const routes = [
         name: 'NetworkView',
         component: NetworkView
     }, 
+<<<<<<< HEAD
     {
       path: '/jkhsfx',
       name: 'jkhsfx',
@@ -58,6 +62,9 @@ const routes = [
       name: 'ymxnfx',
       component: YmxnfxView
     },  
+=======
+
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
   ]
   
   const router = createRouter({

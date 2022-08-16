@@ -23,6 +23,7 @@
                             <li><a class="dropdown-item" href="#">静态资源错误统计</a></li>
                             </ul>
                     </li>
+<<<<<<< HEAD
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">性能</a>
                             <ul class="dropdown-menu">
@@ -31,6 +32,10 @@
                             </li>
                             <li><router-link class="dropdown-item" :to="{name: 'ymxnfx'}">页面性能分析</router-link></li>
                             </ul>
+=======
+                    <li class="nav-item">
+                        <a class="nav-link"  href="#">性能</a>
+>>>>>>> ede040898ede27acfabcd414bc62cc44597544f6
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">实验室</a>
