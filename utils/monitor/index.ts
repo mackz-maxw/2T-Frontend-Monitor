@@ -5,7 +5,7 @@ import { timing } from "./lib/timing";
 import { longTask } from "./lib/longTask";
 import { pv } from "./lib/pv";
 import {proxyFetch} from './lib/proxyFetch'
-
+import {resource} from './lib/resource'
 
 
 export function useMonitor(){
@@ -17,5 +17,6 @@ export function useMonitor(){
     timing();
     pv();
     longTask();
+    resource();
 }
 // useMonitor();

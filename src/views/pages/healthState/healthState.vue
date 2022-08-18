@@ -59,7 +59,7 @@
 
 
 <script lang="ts">
-import HelloEcharts from "../bars/userPie.vue";
+import HelloEcharts from "@/components/MCharts/MCharts.vue";
 // import echarts from 'echarts';
 import { option1, option2, option3 } from "./optionHealth";
 
