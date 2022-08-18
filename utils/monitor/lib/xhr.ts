@@ -77,9 +77,9 @@ let oldSend=XMLHttpRequest.prototype.send
             params: argumentsList[0] || "", // 入参
           });
         };
-        thisArg.addEventListener("load", handler("load"), false);
-        thisArg.addEventListener("error", handler('error'), false);
-        thisArg.addEventListener("abort", handler('abort'), false);
+        thisArg.addEventListener("load", handler(), false);
+        thisArg.addEventListener("error", handler(), false);
+        thisArg.addEventListener("abort", handler(), false);
       }
       return target.apply(thisArg, argumentsList);
     } 

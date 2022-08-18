@@ -27,7 +27,7 @@ export function proxyFetch(){
                     }
                 }
                 
-                return _origin_fetch.apply(thisArg, argumentsList).then((response)=>{
+                return target.apply(thisArg, argumentsList).then((response)=>{
                     if(monitorFlag){
                         console.log('fetchResponse',response)
                         let handler = () => {
