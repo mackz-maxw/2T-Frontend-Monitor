@@ -11,6 +11,7 @@ export function timing() {
     FMP = perfEntries[0];
     observer.disconnect(); // 不再观察了
   }).observe({ entryTypes: ["element"] }); // 观察页面中有意义的元素
+
   // 增加一个性能条目的观察者
   new PerformanceObserver((entryList, observer) => {
     const perfEntries = entryList.getEntries();
@@ -18,6 +19,7 @@ export function timing() {
     LCP = lastEntry;
     observer.disconnect(); // 不再观察了
   }).observe({ entryTypes: ["largest-contentful-paint"] }); // 观察页面中最大的元素
+  
   // 增加一个性能条目的观察者
   new PerformanceObserver((entryList, observer) => {
     const lastEvent = getLastEvent();

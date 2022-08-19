@@ -188,7 +188,6 @@
 
 import MCharts from "@/components/MCharts/MCharts.vue";
 
-// import echarts from 'echarts';
 import { option1, option2 } from "./option";
 
 export default {
@@ -203,23 +202,6 @@ export default {
       width: "400px",
     };
   },
-
-//   methods: {
-//     changeWidth() {
-//       if (this.width == "600px") {
-//         this.width = "800px";
-//       } else {
-//         this.width = "600px";
-//       }
-//     },
-//     changeOption() {
-//       if (this.option == option1) {
-//         this.option = option2;
-//       } else {
-//         this.option = option1;
-//       }
-//     }
-//   }
 
 }
 

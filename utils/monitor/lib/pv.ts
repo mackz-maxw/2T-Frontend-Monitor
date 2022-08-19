@@ -24,11 +24,13 @@ export function pv() {
     },
     false
   );
+  
   var connection = navigator.connection;
   console.log('connection',connection)
   tracker.send({
     kind: "business",
     type: "pv",
+    source:document.referrer||"",
     effectiveType: connection.effectiveType, //网络环境
     rtt: connection.rtt, //往返时间
     uuid,

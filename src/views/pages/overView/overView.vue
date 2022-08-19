@@ -251,7 +251,7 @@
 </template>
 
 
-<script>
+<script >
 
 import MCharts from "@/components/MCharts/MCharts.vue";
 import { option1, option2} from "./option.js";
@@ -268,10 +268,7 @@ export default {
     };
   },
 }
-// export default {
-//     name: "roleList",
 
-// }
 </script>
 
 

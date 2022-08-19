@@ -7,7 +7,6 @@
         <div class="row">
             <div class="col-md-12 mb-3">
                 <div class="card text-black bg-light" >
-                    <!-- <div class="card-header"> TTFB平均时间</div> -->
                         <div class="card-body" >
                             <img src="@/assets/QQ.png" alt="">
                             <!-- <HelloEcharts :option="option" autoresize/> -->
@@ -59,7 +58,6 @@
                         <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
                             <MCharts  :option= "option3" style="width: 100%; height: 100%;"/>
                     </div>
-                    <!-- <div class="card-body"> -->      
                 </div>
             </div>
         </div>
@@ -71,7 +69,6 @@
 
 import MCharts from "@/components/MCharts/MCharts.vue";
 
-// import echarts from 'echarts';
 import { option1, option2, option3 } from "./optionHealth";
  
 export default {

@@ -10,7 +10,6 @@ import JkhsfxView from '../views/pages/jkhsfxView/jkhsfxView.vue';
 import YmxnfxView from '../views/pages/ymxnfxView/ymxnfxView.vue';
 
 
-
 const routes = [
     {
       path: '/',
@@ -63,6 +62,36 @@ const routes = [
       component: YmxnfxView
     },  
 
+    {
+      path: '/errorStat',
+      name: 'errorStat',
+      isHide: true, 
+      component: () => import("../views/pages/errorStat/errorStat.vue"),
+      // redirect: "/errorStat_total",
+      children: [
+        {
+          path: "/errorStat_total",
+          name: "errorStat_total",
+          component: () => import("../views/pages/errorStat/errorStat_total.vue"),
+          // redirect: "/error_table",
+        },
+        {
+          path: "/errorStat_list",
+          name: "errorStat_list",
+          component: () => import("../views/pages/errorStat/errorStat_list.vue"),
+        },
+        {
+          path: "/errorStat_rele",
+          name: "errorStat_rele",
+          component: () => import("../views/pages/errorStat/errorStat_rele.vue"),
+        },
+        {
+          path: "/errorStat_proc",
+          name: "errorStat_proc",
+          component: () => import("../views/pages/errorStat/errorStat_proc.vue"),
+        },
+      ]
+    },
   ]
   
   const router = createRouter({
