@@ -14,8 +14,8 @@ import 'element-plus/dist/index.css'
 // import ApiService from '@/service/api.service.js';
 
 
-import {useMonitor} from '../utils/monitor/index.js'
-useMonitor();
+// import {useMonitor} from '../utils/monitor/index.js'
+// useMonitor();
 
 const app=createApp(App);
  app.use(router)
