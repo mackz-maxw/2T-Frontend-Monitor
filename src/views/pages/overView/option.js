@@ -16,9 +16,9 @@ export const option1 = {
 };
 
 export const option2 = {
-  title: {
-    text: 'World Population'
-  },
+  // title: {
+  //   text: 'World Population'
+  // },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -27,9 +27,9 @@ export const option2 = {
   },
   legend: {},
   grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
+    // left: '3%',
+    // right: '4%',
+    // bottom: '3%',
     containLabel: true
   },
   xAxis: {

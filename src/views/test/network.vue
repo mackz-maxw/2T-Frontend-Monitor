@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
    <div id="container">
       <div class="content">
         <input
@@ -53,4 +53,4 @@ function sendSuccess() {
 </script>
 
 <style>
-</style>
+</style> -->

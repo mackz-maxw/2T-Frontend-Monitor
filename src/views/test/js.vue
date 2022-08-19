@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="container">
       <div id="content">
         <input
@@ -55,4 +55,4 @@ function errorClick():void{
 </script>
 
 <style>
-</style>
+</style> -->
