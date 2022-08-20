@@ -67,7 +67,7 @@ const routes = [
       name: 'errorStat',
       isHide: true, 
       component: () => import("../views/pages/errorStat/errorStat.vue"),
-      // redirect: "/errorStat_total",
+      redirect: "/errorStat_total",
       children: [
         {
           path: "/errorStat_total",

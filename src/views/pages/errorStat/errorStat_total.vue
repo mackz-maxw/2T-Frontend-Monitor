@@ -3,7 +3,7 @@
         <div class="card text-black bg-light h-100">
             <div class="card-body" id="main-chart">
                 <p>时间范围</p>
-                <HelloEcharts :option= "option1"  />
+                <HelloEcharts :option="option1" />
             </div>
         </div>
     </div>
@@ -12,6 +12,14 @@
             <div class="card text-black bg-light h-100">
                 <div class="card-body">
                     <p>JS错误</p>
+                    <el-table :data="tableData" style="width: 100%">
+                        <el-table-column prop="error" label="错误">
+                        </el-table-column>
+                        <el-table-column prop="count" label="发生次数" width="180">
+                        </el-table-column>
+                        <el-table-column prop="people" label="影响人数" width="180">
+                        </el-table-column>
+                    </el-table>
                     <!-- <el-item index="/error_table"></el-item> -->
                 </div>
             </div>
@@ -21,6 +29,14 @@
             <div class="card text-black bg-light h-100">
                 <div class="card-body">
                     <p>自定义异常</p>
+                    <el-table :data="tableData" style="width: 100%">
+                        <el-table-column prop="error" label="错误">
+                        </el-table-column>
+                        <el-table-column prop="count" label="发生次数" width="180">
+                        </el-table-column>
+                        <el-table-column prop="people" label="影响人数" width="180">
+                        </el-table-column>
+                    </el-table>
                     <!-- <el-item index="/error_table"></el-item> -->
                 </div>
             </div>
@@ -46,7 +62,24 @@ export default {
             width_chart1: "200px",
             height_chart1: "300px",
             width_chart2: "150px",
-            height_chart2: "150px"
+            height_chart2: "150px",
+            tableData: [
+                {
+                    error: 'Network error',
+                    count: '130',
+                    people: '2203'
+                },
+                {
+                    error: 'Network error',
+                    count: '130',
+                    people: '2203'
+                },
+                {
+                    error: 'Network error',
+                    count: '130',
+                    people: '2203'
+                },
+            ]
         };
     },
 }
@@ -54,7 +87,7 @@ export default {
 
 
 <style scoped>
-#main-chart{
+#main-chart {
     height: 300px;
     margin-bottom: 20px;
 }
