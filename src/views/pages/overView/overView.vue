@@ -182,6 +182,7 @@
                 </div>
                 <div class="card-body">
                     <MCharts :option="option2" style="width: 100%; height: 500px" />
+
                 </div>
             </div>
         </div>

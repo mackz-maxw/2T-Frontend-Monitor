@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row-title">
-            <div class="col-md-12 fw-bold fs-4">健康数据</div>  
+            <h1 class="col-md-12 fw-bold fs-4">健康数据</h1>  
         </div>
 
         <div class="row">

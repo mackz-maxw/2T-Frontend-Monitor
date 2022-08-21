@@ -13,7 +13,7 @@ export function pv() {
     }
   }
   window.addEventListener(
-    "unload",
+    "beforeunload",
     () => {
       let stayTime = Date.now() - startTime;
       tracker.send({
