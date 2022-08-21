@@ -19,7 +19,6 @@
 
             <div class="col-md-4 mb-3">
                 <div class="card text-black bg-light h-100" >
-                    <!-- <div class="card-header"></div> -->
                         <div class="card-body">
                             <h5 class="card-title">Dom解析时间</h5>
                             <p class="card-text">
@@ -32,7 +31,6 @@
 
             <div class="col-md-4 mb-3">
                 <div class="card text-black bg-light h-100" >
-                    <!-- <div class="card-header">Header</div> -->
                         <div class="card-body">
                             <h5 class="card-title">页面平均加载时间</h5>
                             <p class="card-text">
@@ -51,8 +49,8 @@
                         <h6>页面加载耗时分段数量占比</h6>
                     </div>
                     <div class="card-body">
-                        <HelloEcharts :option="option" />
-                        <!-- <userPie /> -->
+                        <MCharts :option="option" style="width: 100%; height: 100%"/>
+
                     </div>
                 </div>
             </div>
@@ -83,7 +81,6 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">https://www.webfunny.cn/home.html</th>
-                                    <!-- <td colspan="2">5.53万</td> -->
                                     <td>5.53万</td>
                                     <td>1.38s</td>
                                 </tr>
@@ -101,7 +98,6 @@
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="card text-black bg-light h-100" >
-                    <!-- <div class="card-header"> 接口请求总量</div> -->
                         <div class="card-body">
                             <h5 class="card-title">接口请求总量</h5>
                             <p class="card-text">
@@ -114,7 +110,6 @@
 
             <div class="col-md-4 mb-3">
                 <div class="card text-black bg-light h-100" >
-                    <!-- <div class="card-header">接口请求平均耗时</div> -->
                         <div class="card-body">
                             <h5 class="card-title">接口请求平均耗时</h5>
                             <p class="card-text">
@@ -127,7 +122,6 @@
 
             <div class="col-md-4 mb-3">
                 <div class="card text-black bg-light h-100" >
-                    <!-- <div class="card-header">接口请求成功率</div> -->
                         <div class="card-body">
                              <h5 class="card-title">接口请求成功率</h5>
                             <p class="card-text">
@@ -145,7 +139,7 @@
                         接口请求耗时分段数量占比
                     </div>
                     <div class="card-body">
-                        <HelloEcharts :option="option" />
+                        <MCharts :option="option" style="width: 100%; height: 100%"/>
                     </div>
                 </div>
             </div>
@@ -191,14 +185,15 @@
 </template>
 
 <script lang="ts">
-import HelloEcharts from "@/components/MCharts/MCharts.vue";
-// import echarts from 'echarts';
+
+import MCharts from "@/components/MCharts/MCharts.vue";
+
 import { option1, option2 } from "./option";
 
 export default {
     name: "PerformanceView",
   components: {
-    HelloEcharts,
+    MCharts,
   },
 
   data() {
@@ -207,33 +202,13 @@ export default {
       width: "400px",
     };
   },
-//   methods: {
-//     changeWidth() {
-//       if (this.width == "600px") {
-//         this.width = "800px";
-//       } else {
-//         this.width = "600px";
-//       }
-//     },
-//     changeOption() {
-//       if (this.option == option1) {
-//         this.option = option2;
-//       } else {
-//         this.option = option1;
-//       }
-//     }
-//   }
+
 }
 
 </script>
 
 
 <style scoped>
-
-.performance-container{
-    margin-left: var(--offcanvas-width);
-}
-
 .title{
     flex:3
 }
@@ -251,8 +226,8 @@ export default {
     display:flex;
     /* text-align: center; */
     /* line-height: 10px; */
-    height: 50px;
-    /* margin-top: 10px; */
+    height: 40px;
+    margin-top: -20px;
     /* margin-bottom: 10px; */
     justify-content: center;
     flex-direction: column;

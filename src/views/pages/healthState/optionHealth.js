@@ -18,8 +18,6 @@ export const option1 = {
     show: false,
   },
   legend: {
-
-
     orient: "vertical",
     x: "left",
     show: false,
@@ -57,13 +55,9 @@ export const option1 = {
         },
       },
       {
-
-
         value: 100 - e,
         name: "",
         itemStyle: {
-
-
           color: "transparent",
         },
       },

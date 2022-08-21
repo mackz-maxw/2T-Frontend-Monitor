@@ -1,146 +1,305 @@
 <template>
-        <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row-title">
-            <h1 class="col-md-12 fw-bold fs-4">核心数据</h1>  
-        </div>
-        <div class="text-black bg-light card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">流量数据</h5>
-                <div class="row" >
-                    <div class="col-md-2 text-center">
-                        <h3 class="fs-6">浏览量(pv)</h3>
-                        <p class="fs-2">41454155</p>
-                        <p class="fs-6">较昨日<span class="text-success">154%↑</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="height: 15rem;">
-            <div class="card-body">
-                        <h5 class="card-title">Js报错趋势</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                        <!-- <HelloEcharts :option= "option3" /> -->
-            </div>
+            <div class="col-md-12 fw-bold fs-4">核心数据</div>
         </div>
 
         <div class="row">
-            <div class="col-md-4 mb-3">
-                <div class="card position-relative" style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Js报错趋势</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                        <div class="position-absolute top-0 end-0 card-body">
-                            <p class="text-end"><span class="text-success">20%↑</span><br/>较一周前</p>
+            <!-- <div class="col-md-4 mb-3"> -->
+            <div class="card text-black bg-light h-100" id="card-md12">
+                <div class="card-header">流量数据</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">浏览量(PV)</div>
+                                <div class="card-body">
+                                    2109832
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- <HelloEcharts :option= "option3" /> -->
-                    </div>     
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card " style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">自定义异常趋势</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                        <div class="position-absolute top-0 end-0 card-body">
-                            <p class="text-end"><span class="text-success">20%↑</span><br/>较一周前</p>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">访客数(UV)</div>
+                                <div class="card-body">
+                                    657891
+                                </div>
+                            </div>
                         </div>
 
-                            <!-- <HelloEcharts :option= "option3" /> -->
-                    </div>   
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card " style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">静态资源加载报错</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                        <div class="position-absolute top-0 end-0 card-body">
-                            <p class="text-end"><span class="text-success">20%↑</span><br/>较一周前</p>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">新访客</div>
+                                <div class="card-body">
+                                    129871
+                                </div>
+                            </div>
                         </div>
-
-                            <!-- <HelloEcharts :option= "option3" /> -->
-                    </div>    
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card " style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">接口请求报错</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                        <div class="position-absolute top-0 end-0 card-body">
-                            <p class="text-end"><span class="text-success">20%↑</span><br/>较一周前</p>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">IP数</div>
+                                <div class="card-body">
+                                    657591
+                                </div>
+                            </div>
                         </div>
-
-                            <!-- <HelloEcharts :option= "option3" /> -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">频次(人均)</div>
+                                <div class="card-body">
+                                    3.21
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">跳出率</div>
+                                <div class="card-body">
+                                    59.05%
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- <div class="card-body"> -->      
-                </div>
-            </div>
-        </div>
-        <div class="row-title mb-3">
-                <h1 class="fw-bold fs-4  d-inline-block mb-0  align-middle">综合数据</h1>
-                <span class="d-inline-block ms-2">
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-outline-dark btn-sm">Left</button>
-                        <button type="button" class="btn btn-outline-dark btn-sm">Middle</button>
-                        <button type="button" class="btn btn-outline-dark btn-sm">Right</button>
-                    </div>
-                </span>
-        </div>
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <div class="card " style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Js报错趋势</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                        <!-- <HelloEcharts :option= "option3" /> -->
-                    </div>     
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card " style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">自定义异常趋势</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                            <!-- <HelloEcharts :option= "option3" /> -->
-                    </div>   
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card " style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">静态资源加载报错</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                            <!-- <HelloEcharts :option= "option3" /> -->
-                    </div>    
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card " style="height: 20rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">接口请求报错</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022-08-16</h6>
-                            <!-- <HelloEcharts :option= "option3" /> -->
-                    </div>
-                    <!-- <div class="card-body"> -->      
+
                 </div>
             </div>
         </div>
     </div>
+    <br />
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="card" style="height: 20rem;" id="card-md12">
+                <div class="card-header">
+                    <h6>页面加载耗时分段数量占比</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option" style="width: 100%; height: 100%" />
+                    <!-- <userPie /> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6>页面访问量趋势</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option" style="width: 100%; height: 400px" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <h6>用户活跃量趋势</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option" style="width: 100%; height: 400px" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card ">
+                <div class="card-header">
+                    <h6>新用户活跃量趋势</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option" style="width: 100%; height: 400px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>跳出率趋势</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option" style="width: 100%; height: 400px" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>用户平均在线时长</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option" style="width: 100%; height: 400px" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>新用户次日留存率</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option" style="width: 100%; height: 400px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-title">
+        <div class="col-md-12 fw-bold fs-4">综合数据</div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>网站访问量Top 10</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>来源网站Top 10</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>城市名称访问用户量Top 10</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>设备型号用户量Top 10</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>系统版本用户量Top 10</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>应用版本访问用户量Top 10</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>浏览器使用量Top 10 </h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>设备分辨率量Top 10 </h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-150">
+                <div class="card-header">
+                    <h6>新用户次日留存率</h6>
+                </div>
+                <div class="card-body">
+                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
 </template>
 
 
-<script setup lang="ts">
+<script >
 
-// setTimeout(() => {
-//     let a=document.createElement('script');
-//     a.src="http://localhost:3000/js.js";
-//     document.body.appendChild(a);
-// }, 2000);
+import MCharts from "@/components/MCharts/MCharts.vue";
+import { option1, option2 } from "./option.js";
+export default {
+    name: "OverView",
+    components: {
+        MCharts,
+    },
+    data() {
+        return {
+            option: option1,
+            option2: option2,
+            width: "400px",
+        };
+    },
+}
+
 </script>
 
 
 <style scoped>
-    
+.row-title {
+    display: flex;
+    /* text-align: center; */
+    /* line-height: 10px; */
+    height: 40px;
+    margin-top: -20px;
+    /* margin-bottom: 10px; */
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}  */
+#card-md12 {
+    padding: 0px;
+}
 </style>

@@ -2,7 +2,7 @@ export const option1 = {
 
     title: {
         text: 'Referer of a Website',
-        subtext: 'Fake Data',
+        // subtext: 'Fake Data',
         left: 'center'
       },
       tooltip: {

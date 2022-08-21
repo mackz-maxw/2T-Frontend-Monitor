@@ -17,15 +17,27 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">错误</a>
                             <ul class="dropdown-menu">
                             <li>
-                                <router-link class="dropdown-item" :to="{name: 'overview'}">错误统计</router-link>
+                                <router-link class="dropdown-item" :to="{name: 'errorStat'}">错误统计</router-link>
                             </li>
                             <li><a class="dropdown-item" href="#">Api接口错误统计</a></li>
                             <li><a class="dropdown-item" href="#">静态资源错误统计</a></li>
                             </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href="#">性能</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">性能</a>
+                            <ul class="dropdown-menu">
+                            <li>
+                                <router-link class="dropdown-item" :to="{name: 'jkhsfx'}">接口耗时分析</router-link>
+                            </li>
+                            <li><router-link class="dropdown-item" :to="{name: 'ymxnfx'}">页面性能分析</router-link></li>
+                            </ul>
                     </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link"  href="#">性能</a>
+
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#">实验室</a>
                     </li>
