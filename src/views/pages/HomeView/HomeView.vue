@@ -20,16 +20,16 @@
                 <span>性能预览</span>
             </el-menu-item>
 
-            <el-menu-item index="/danger">
+            <el-menu-item index="/map">
                 <el-icon><icon-menu /></el-icon>
-                <span>危险状况分析</span>
+                <span>地域分布</span>
             </el-menu-item>
         </el-menu>
 
       </el-aside>
 
       <!-- ___main___ -->
-      <el-main>
+      <el-main >
         <router-view></router-view>
       </el-main>
     </el-container>

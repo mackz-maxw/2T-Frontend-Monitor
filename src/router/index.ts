@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import HomeView from '../views/pages/HomeView/HomeView.vue';
+import HomeView from '../views/pages/homeView/homeView.vue';
 import HealthState from '../views/pages/healthState/healthState.vue';
 import PerformanceView from '../views/pages/performanceView/performanceView.vue';
 import JsView from '../views/test/js.vue';
 import NetworkView from '../views/test/network.vue';
-import DangerView from '../views/pages/dangerView/dangerView.vue';
+import MapView from '../views/pages/mapView/mapView.vue';
 
 const routes = [
     {
@@ -30,9 +30,9 @@ const routes = [
             component: PerformanceView
         },      
         {
-            path:"/danger",
-            name:"danger",
-            component: DangerView
+            path:"/map",
+            name:"map",
+            component: MapView
         }
       ]
     },
