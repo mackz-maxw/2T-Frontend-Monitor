@@ -1,29 +1,14 @@
 import * as echarts from 'echarts'
 import china from '@/utils/map/china.json'
-import world from '@/utils/map/world.json'
-import worldName from '@/utils/map/worldName.json'
 
-// echarts.registerMap('china', china);
-echarts.registerMap('world', world);
-
-var geoCoordMap = [
-    { name: "芬兰", value: worldName.geoCoordMap["芬兰"], symbolSize: 8 },
-    { name: "德国", value: worldName.geoCoordMap["德国"], symbolSize: 8 },
-    { name: "英国", value: worldName.geoCoordMap["英国"], symbolSize: 8 },
-    { name: "韩国", value: worldName.geoCoordMap["韩国"], symbolSize: 8 },
-    { name: "日本", value: worldName.geoCoordMap["日本"], symbolSize: 8 },
-  ]
-  var data = [
-    { name: "澳大利亚", value: [135.193845, -25.304039], symbolSize: 8 },
-    { name: "美国", value: [-100.696295, 33.679979], symbolSize: 8 },
-  ]
+echarts.registerMap('china', china);
 
 let resData=getData();
 function getData() {
     let data = [];
     for (let i = 0; i < 20; i++) {
         let num = Math.round(Math.random() * Math.random() * 400)
-        data.push({ "name": world.features[i].properties.name, "value": [...world.features[i].properties.center, num] })
+        data.push({ "name": china.features[i].properties.name, "value": [...china.features[i].properties.center, num] })
     }
     return data;
 }
@@ -84,15 +69,14 @@ function getMapColor(dataValue){
     return data;
 }
 
-export const option = {
+export const chinaOption = {
     tooltip: {
         trigger: 'item',
       },        
     geo: {
-        map: "world",
+        map: "china",
         roam: true,// 一定要关闭拖拽
-        zoom: 1.5,
-        center: [105, 36], // 调整地图位置
+        zoom: 1.2,
         label: {
             normal: {
                 show: false, //关闭省份名展示
@@ -104,7 +88,7 @@ export const option = {
                 color: "rgba(0,0,0,0.7)"
             }
         },
-        // regions:getMapColor(resData),
+        regions:getMapColor(resData),
         
     },
     series: [
@@ -112,7 +96,7 @@ export const option = {
             name: "Top 5",
             type: "effectScatter",
             coordinateSystem: "geo",
-            data: geoCoordMap,
+            data: dataTop5,
             symbolSize: 8,
             tooltip: {
                 show: true
@@ -137,10 +121,10 @@ export const option = {
                 shadowBlur: 2,
                 shadowColor: "#333"
             },
-            // markPoint: {
-            //     symbolSize:25,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 
-            //     data: getMarList(dataTop5)
-            // },
+            markPoint: {
+                symbolSize:25,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 
+                data: getMarList(dataTop5)
+            },
             tooltip: {
                 show:false
             }, 

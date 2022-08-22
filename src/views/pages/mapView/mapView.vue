@@ -2,25 +2,25 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 map-box">
-                <div class="card text-black bg-light h-100" >
+                <div class="card text-black bg-light h-100">
                     <!-- <div class="card-header"> TTFB平均时间</div> -->
-                        <div class="card-body  h-100">
-                            <h5 class="card-title">静态资源加载报错</h5>
-                            <div class="position-absolute top-0 end-0 card-body">
-                                <div class="btn-group" role="group" aria-label="...">
-                                    <button type="button" class="btn btn-outline-dark btn-sm">Left</button>
-                                    <button type="button" class="btn btn-outline-dark btn-sm">Middle</button>
-                                </div>
+                    <div class="card-body  h-100">
+                        <h5 class="card-title">静态资源加载报错</h5>
+                        <div class="position-absolute top-0 end-0 card-body">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-outline-dark btn-sm" @click="mapChange">中国</button>
+                                <button type="button" class="btn btn-outline-dark btn-sm" @click="mapChange">世界</button>
                             </div>
-                            <HelloEcharts :option= "option" height="calc(100% - 2rem)"/>
                         </div>
+                        <HelloEcharts ref="mapChart" :option="isChina ? chinaOption : worldOption" height="calc(100% - 2rem)">
+                        </HelloEcharts>
+                    </div>
                 </div>
             </div>
             <div class="map-list">
-                <div class="card text-black bg-light" >
-                    <!-- <div class="card-header"> TTFB平均时间</div> -->
-                        <div class="card-body">
-                        </div>
+                <div class="card text-black bg-light">
+                    <div class="card-header"> TTFB平均时间</div>
+                    <div class="card-body"></div>
                 </div>
             </div>
         </div>
@@ -30,8 +30,22 @@
 
 <script lang="ts" setup>
 import HelloEcharts from "@/components/MCharts/MCharts.vue";
+import { after } from "lodash";
+import { ref } from "vue";
 // import echarts from 'echarts';
-import { option } from "./optionMap";
+import { chinaOption } from "./optionChina";
+import { worldOption } from "./optionWorld";
+
+let isChina = ref(true);
+let mapChart = ref(null);
+
+function mapChange() {
+    if (isChina.value) {
+        isChina.value=false
+    } else {
+        isChina.value= true
+    }
+}
 
 
             // width_chart1: "200px",
@@ -42,11 +56,12 @@ import { option } from "./optionMap";
 
 
 <style scoped>
-.map-box{
+.map-box {
     max-width: calc(100% - 30rem);
     height: calc(100vh - 7rem);
 }
-.map-list{
-    width:30rem;
+
+.map-list {
+    width: 30rem;
 }
 </style>
