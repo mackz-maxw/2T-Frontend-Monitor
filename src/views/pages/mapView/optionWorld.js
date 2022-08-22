@@ -1,15 +1,27 @@
 import * as echarts from 'echarts'
 import china from '@/utils/map/china.json'
+import world from '@/utils/map/world.json'
+import worldName from '@/utils/map/worldName.json'
 
-echarts.registerMap('china', china);
+// echarts.registerMap('china', china);
+echarts.registerMap('world', world);
+
 
 let resData=getData();
 function getData() {
     let data = [];
-    for (let i = 0; i < 20; i++) {
-        let num = Math.round(Math.random() * Math.random() * 400)
-        data.push({ "name": china.features[i].properties.name, "value": [...china.features[i].properties.center, num] })
-    }
+    //调接口
+    data=[
+        { name: "芬兰", value: [...worldName.geoCoordMap["芬兰"],Math.round(Math.random() * Math.random() * 400)]},
+        { name: "中国", value: [...worldName.geoCoordMap["中国"],Math.round(Math.random() * Math.random() * 400)]},
+        { name: "英国", value: [...worldName.geoCoordMap["英国"],Math.round(Math.random() * Math.random() * 400)]},
+        { name: "韩国", value: [...worldName.geoCoordMap["韩国"],Math.round(Math.random() * Math.random() * 400)]},
+        { name: "日本", value: [...worldName.geoCoordMap["日本"],Math.round(Math.random() * Math.random() * 400)]},
+        { name: "德国", value: [...worldName.geoCoordMap["德国"],Math.round(Math.random() * Math.random() * 400)]},
+        { name: "新加坡", value: [...worldName.geoCoordMap["新加坡"],Math.round(Math.random() * Math.random() * 400)]},
+        { name: "泰国", value: [...worldName.geoCoordMap["泰国"],Math.round(Math.random() * Math.random() * 400)]},
+      ]
+    
     return data;
 }
 
@@ -36,7 +48,6 @@ function getMarList(dataValue){
 function getMapColor(dataValue){
     let data=[];
     for(let index in dataValue){
-        
         let [xAxis,yAxis,value]=dataValue[index].value
         if(value>0&&value<50){
             data.push({
@@ -69,15 +80,13 @@ function getMapColor(dataValue){
     return data;
 }
 
-export const option = {
+export const worldOption = {
     tooltip: {
         trigger: 'item',
       },        
     geo: {
-        map: "china",
+        map: "world",
         roam: true,// 一定要关闭拖拽
-        zoom: 1.5,
-        center: [105, 36], // 调整地图位置
         label: {
             normal: {
                 show: false, //关闭省份名展示
@@ -89,15 +98,15 @@ export const option = {
                 color: "rgba(0,0,0,0.7)"
             }
         },
-        // regions:getMapColor(resData),
-        
+        regions:getMapColor(resData),
+        nameMap:worldName.nameMap
     },
     series: [
         {
             name: "Top 5",
             type: "effectScatter",
             coordinateSystem: "geo",
-            data: geoCoordMap,
+            data: dataTop5,
             symbolSize: 8,
             tooltip: {
                 show: true
@@ -122,10 +131,10 @@ export const option = {
                 shadowBlur: 2,
                 shadowColor: "#333"
             },
-            // markPoint: {
-            //     symbolSize:25,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 
-            //     data: getMarList(dataTop5)
-            // },
+            markPoint: {
+                symbolSize:25,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 
+                data: getMarList(dataTop5)
+            },
             tooltip: {
                 show:false
             }, 

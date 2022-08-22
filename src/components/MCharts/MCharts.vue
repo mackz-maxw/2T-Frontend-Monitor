@@ -74,11 +74,13 @@ export default {
     },
     option() {
       if (this.myChart) {
+        this.showLoading();
         //   notMerge这个方法，是表示配置不重复，但是目前这个分代码没有生效
-        this.myChart.setOption(this.option),
-          {
+        this.myChart.setOption(this.option)
+        this.myChart.hideLoading();
+          // {
             // notMerge: true,
-          };
+          // };
       }
     },
   },
@@ -94,6 +96,13 @@ export default {
     resize() {
       this.myChart.setOption(this.option);
       this.myChart.resize();
+    },
+    showLoading(text){
+      this.myChart.showLoading({
+          text,
+          textStyle: { fontSize : 30 , color: '#444' },
+          effectOption: {backgroundColor: 'rgba(0, 0, 0, 0)'}
+      })
     }
   }, 
   beforeDestroy() {
@@ -102,7 +111,7 @@ export default {
   mounted() {
     this.myChart = echarts.init(document.getElementById(this.uuid));
     this.myChart.setOption(this.option);
-               window.addEventListener('resize', this.resize.bind(this))
+    window.addEventListener('resize', this.resize.bind(this))
     // window.addEventListener('resize', function () {this.myChart.resize();})
     // let listener = function(){
     //     console.log('resize')
