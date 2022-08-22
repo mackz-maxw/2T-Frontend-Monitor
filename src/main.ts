@@ -15,7 +15,7 @@ import 'element-plus/dist/index.css'
 
 
 // import {useMonitor} from '@/utils/monitor/index.js'
-// useMonitor();
+// useMonitor('afwafafsaerfsdfghtrrydr');
 
 const app=createApp(App);
  app.use(router)

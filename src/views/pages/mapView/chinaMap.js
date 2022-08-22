@@ -75,7 +75,7 @@ export const option = {
       },        
     geo: {
         map: "china",
-        roam: false,// 一定要关闭拖拽
+        roam: true,// 一定要关闭拖拽
         zoom: 1.5,
         center: [105, 36], // 调整地图位置
         label: {
@@ -89,7 +89,7 @@ export const option = {
                 color: "rgba(0,0,0,0.7)"
             }
         },
-        regions:getMapColor(resData),
+        // regions:getMapColor(resData),
         
     },
     series: [
@@ -97,7 +97,7 @@ export const option = {
             name: "Top 5",
             type: "effectScatter",
             coordinateSystem: "geo",
-            data: dataTop5,
+            data: geoCoordMap,
             symbolSize: 8,
             tooltip: {
                 show: true
@@ -122,10 +122,10 @@ export const option = {
                 shadowBlur: 2,
                 shadowColor: "#333"
             },
-            markPoint: {
-                symbolSize:25,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 
-                data: getMarList(dataTop5)
-            },
+            // markPoint: {
+            //     symbolSize:25,       // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 
+            //     data: getMarList(dataTop5)
+            // },
             tooltip: {
                 show:false
             }, 

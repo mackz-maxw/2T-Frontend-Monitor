@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
    <div id="container">
       <div class="content">
         <input
@@ -18,6 +18,12 @@
           id="errorBtn"
           value="发送axios请求"
           @click="sendAxios()"
+        />
+        <input
+          type="button"
+          id="successBtn"
+          value="发送fetch请求"
+          @click="sendFetch()"
         />
         <img src="http://localhost:3000/img"/>
       </div>
@@ -50,7 +56,17 @@ function sendSuccess() {
       function sendAxios(){
         ApiService.post('/success',{say:"hello"})
       }
+
+      function sendFetch(){
+        fetch('/success').then(function(response) {
+          return response.json();
+        }).then(function(data) {
+          console.log("data",data);
+        }).catch(function(e) {
+          console.log("Oops, error:",e);
+        }); 
+      }
 </script>
 
 <style>
-</style> -->
+</style>

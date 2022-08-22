@@ -26,7 +26,11 @@ export default defineConfig({
 			[`${loadEnv('development', process.cwd()).VITE_APP_BASE_API}`]: {
 				target: ' http://monitor-api.twotomatoes.org.cn:10086', // 目标服务  
 				changeOrigin: true
-			}
+			},
+			'/success': {
+				target: ' http://127.0.0.1:3000', // 目标服务  
+				changeOrigin: true
+			},
 		}
 	}
 })
