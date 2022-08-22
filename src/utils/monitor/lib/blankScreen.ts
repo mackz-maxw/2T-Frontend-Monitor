@@ -31,14 +31,15 @@ export function blankScreen() {
   onload(function () {
     let xElements, yElements;
     for (let i = 0; i < 9; i++) {
+      //
       xElements = document.elementsFromPoint(
         (window.innerWidth * i) / 10,
         window.innerHeight / 2
-      );
+      );//获取屏幕中间x轴方向上的点
       yElements = document.elementsFromPoint(
         window.innerWidth / 2,
         (window.innerHeight * i) / 10
-      );
+      );//获取屏幕中间y轴方向上的点
       isWrapper(xElements[0]);
       isWrapper(yElements[0]);
     }
