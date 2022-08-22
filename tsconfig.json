@@ -18,6 +18,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/service/api.service.js", "src/service/interceptors.service.js"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/service/api.service.js", "src/service/interceptors.service.js", "src/views/pages/mapView/worldMap.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
