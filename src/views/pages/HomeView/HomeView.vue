@@ -2,7 +2,7 @@
   <div class="common-layout">
     <el-container>
       <el-aside width="200px">
-        <el-menu :router="true" :default-active="activeIndex" :style="border:0px" >
+        <el-menu :router="true" :default-active="activeIndex" >
           <el-menu-item index="/overview">
             <el-icon>
               <icon-menu />
@@ -42,7 +42,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 // import Tabs from '../components/Tabs.vue';
 import { ref } from 'vue';
 
@@ -52,9 +52,9 @@ const activeIndex = ref('/overview')
 // }
 export default {
   components: {
-    name: 'HomeView',
-  },
-};
+    name: 'HomeView'
+  }
+}
 </script>
 
 <style scoped>
