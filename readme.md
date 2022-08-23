@@ -19,5 +19,17 @@ ______
      
 ##  重要！！！
    如果图没有正常加载等待修复resize bug即可
-      
+**## ScoreCircle（百分比圆）**
+
+```html
+ <ScoreCircle :score="10" :green="90" :warn="80"></ScoreCircle>
+```
+
+`score`:中间显示的分数，区间[0,100]
+
+`green`:显示为绿色良好的阈值，`score`低于`green`显示黄色警告，默认85
+
+`warn`:显示为黄色警告的阈值，`score`低于`green`显示红色危险，默认60
+
+
       
