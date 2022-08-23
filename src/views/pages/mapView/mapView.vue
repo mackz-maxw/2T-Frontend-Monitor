@@ -8,8 +8,8 @@
                         <h5 class="card-title">静态资源加载报错</h5>
                         <div class="position-absolute top-0 end-0 card-body">
                             <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-outline-dark btn-sm" @click="mapChange">中国</button>
-                                <button type="button" class="btn btn-outline-dark btn-sm" @click="mapChange">世界</button>
+                                <button type="button" class="btn btn-outline-primary btn-sm" :class="{'btn-primary':isChina}" @click="mapChange">中国</button>
+                                <button type="button" class="btn btn-outline-primary btn-sm" :class="{'btn-primary':!isChina}" @click="mapChange">世界</button>
                             </div>
                         </div>
                         <HelloEcharts ref="mapChart" :option="isChina ? chinaOption : worldOption" height="calc(100% - 2rem)">
@@ -63,5 +63,10 @@ function mapChange() {
 
 .map-list {
     width: 30rem;
+}
+
+.btn-outline-primary.btn-primary{
+    color: white; 
+
 }
 </style>

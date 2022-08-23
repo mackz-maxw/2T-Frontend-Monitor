@@ -38,7 +38,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -49,5 +49,14 @@ export default {
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+
+.fs-s {
+  font-size: .8rem;
+}
+
+.fs-m {
+  font-size: .9rem;
 }
 </style>
