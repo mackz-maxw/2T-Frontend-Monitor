@@ -5,52 +5,70 @@ import PerformanceView from '../views/pages/performanceView/performanceView.vue'
 import JsView from '../views/test/js.vue';
 import NetworkView from '../views/test/network.vue';
 import MapView from '../views/pages/mapView/mapView.vue';
-
+import IndexView from '@/views/pages/index/index.vue'
 import JkhsfxView from '../views/pages/jkhsfxView/jkhsfxView.vue';
 import YmxnfxView from '../views/pages/ymxnfxView/ymxnfxView.vue';
 
 
 const routes = [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: HomeView,
       // 如果是根目录的话重定向到overview
-      redirect:"/overview",
+      redirect:"/home/overview",
       children:[
         {
-          path:"/overview",
+          path:"/home/overview",
           name:"overview",
           component:() => import("../views/pages/overView/overView.vue")
         },
         {
-          path:"/healthstate",
+          path:"/home/healthstate",
           name:"healthstate",
           component: HealthState
         },     
         {
-            path:"/performance",
+            path:"/home/performance",
             name:"performance",
             component: PerformanceView
         },      
         {
-            path:"/map",
+            path:"/home/map",
             name:"map",
             component: MapView
         }
       ]
     },
     {
-        path: '/test/js',
-        name: 'JsView',
-        component: JsView
-    }, 
+      path: '/',
+      // 如果是根目录的话重定向到overview
+      redirect:"/index",
+      children:[
+        {
+          path:"/index",
+          name:"IndexView",
+          component:IndexView
+        },
+      ]
+    },
     {
-        path: '/test/network',
-        name: 'NetworkView',
-        component: NetworkView
-    }, 
-
+      path: '/test',
+      // 如果是根目录的话重定向到overview
+      redirect:"/test/js",
+      children:[
+        {
+          path: '/test/js',
+          name: 'JsView',
+          component: JsView
+      }, 
+      {
+          path: '/test/network',
+          name: 'NetworkView',
+          component: NetworkView
+      }, 
+      ]
+    },
     {
       path: '/jkhsfx',
       name: 'jkhsfx',

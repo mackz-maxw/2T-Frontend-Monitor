@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div id="container">
       <div id="content">
         <input
@@ -21,6 +21,13 @@
           @click="latePromiseErrorClick()"
         />
       </div>
+
+      <div class="outer">
+      <div class="inner">
+        <div class="box">hello</div>
+      </div>
+    </div>
+
     </div>
 </template>
 
@@ -54,5 +61,30 @@ function errorClick():void{
       }
 </script>
 
-<style>
-</style> -->
+<style scoped>
+      .outer {
+        width: 400px;
+        height: 700px;
+        background: blue;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .inner {
+        position: relative;
+        width: 100%;
+        /* height: 0; */
+        padding: 50% 0;
+        background: red;
+      }
+
+      .box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+</style>

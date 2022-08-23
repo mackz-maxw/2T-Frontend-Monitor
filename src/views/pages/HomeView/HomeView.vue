@@ -3,28 +3,28 @@
     <el-container>
       <el-aside width="200px">
         <el-menu :router="true" :default-active="activeIndex" >
-          <el-menu-item index="/overview">
+          <el-menu-item index="/home/overview">
             <el-icon>
               <icon-menu />
             </el-icon>
             <span>概览</span>
           </el-menu-item>
 
-          <el-menu-item index="/healthstate">
+          <el-menu-item index="/home/healthstate">
             <el-icon>
               <icon-menu />
             </el-icon>
             <span>健康状况</span>
           </el-menu-item>
 
-          <el-menu-item index="/performance">
+          <el-menu-item index="/home/performance">
             <el-icon>
               <icon-menu />
             </el-icon>
             <span>性能预览</span>
           </el-menu-item>
 
-          <el-menu-item index="/map">
+          <el-menu-item index="/home/map">
             <el-icon>
               <icon-menu />
             </el-icon>

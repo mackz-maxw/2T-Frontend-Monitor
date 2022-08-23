@@ -86,7 +86,7 @@ export const worldOption = {
       },        
     geo: {
         map: "world",
-        roam: true,// 一定要关闭拖拽
+        roam: false,// 一定要关闭拖拽
         label: {
             normal: {
                 show: false, //关闭省份名展示
