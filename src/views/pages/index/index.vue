@@ -22,7 +22,7 @@
     </div>
     <div class="row gx-2">
       <div class="col-4 pb-2" v-for="item in 10" :key="item">
-        <IndexCard></IndexCard>
+        <IndexCard :active-user="1651" :heath-info="healthInfo" :heath-score="10*item" :user-info="userInfo" project-id="oedrtjghoehruf"></IndexCard>
       </div>
     </div>
   </div>
@@ -31,7 +31,34 @@
 <script lang="ts" setup>
 import MDropDown from "@/components/MDropDown/MDropDown.vue";
 import IndexCard from "@/components/IndexCard/IndexCard.vue"
-import { ref } from "@vue/reactivity";
+import { reactive, ref } from "vue";
+
+let userInfo=reactive([{
+  name:"位活跃用户",
+  value:1341
+},{
+  name:"位活跃用户",
+  value:5345
+},{
+  name:"位活跃用户",
+  value:1231
+}
+]);
+
+let healthInfo=reactive([{
+  name:"JS报错率",
+  value:13
+},{
+  name:"JS报错率",
+  value:53
+},{
+  name:"JS报错率",
+  value:12
+},{
+  name:"JS报错率",
+  value:51
+}
+]);
 
 let isGrid = ref(true);
 
