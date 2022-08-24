@@ -8,7 +8,7 @@
         <div class="d-flex justify-content-end align-items-center">
           <MDropDown></MDropDown>
           <MDropDown></MDropDown>
-          <MDropDown></MDropDown>
+          <MDropDown name="下拉3" @select="tapselect"></MDropDown>
           <div class="input-group flex-nowrap w-auto">
             <input type="text" class="form-control " placeholder="Username" aria-label="Username"
               aria-describedby="addon-wrapping">
@@ -70,6 +70,9 @@ function changeToList() {
   isGrid.value = false;
 }
 
+function tapselect(e:{name:string,value:string|number}){
+  console.log(e)
+}
 </script>
 
 <style scoped lang="scss">
