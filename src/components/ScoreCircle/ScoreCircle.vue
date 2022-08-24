@@ -1,12 +1,19 @@
 <template>
     <div class="score-container">
-        <div class="score-box" :class="{'green':props.score>=props.green&&props.score<=100,'warn':props.score<props.green&&props.score>=props.warn,'danger':props.score<props.warn&&props.score>=0}">
+        <div class="score-box" :class="{'green':props.score>=props.green&&props.score<=100,'warn':props.score<props.green&&props.score>=props.warn,'danger':props.score<props.warn&&props.score>=0,'bg':props.showBg}">
             <div class="circle-base "></div>
             <div class="circle-trans transform"></div>
-            <span class="score-number">{{props.score}}</span>
+            <span class="score-number" v-bind="$attrs">{{props.score}}</span>
         </div>
     </div>
 </template>
+
+<script>
+// 使用普通的 <script> 来声明选项
+export default {
+  inheritAttrs: false
+}
+</script>
 
 <script setup>
 import { computed } from 'vue';
@@ -23,6 +30,14 @@ const props = defineProps({
     warn: {
         type: Number,
         default: 60
+    },
+    showBg:{
+        type: Boolean,
+        default: true
+    },
+    borderSize:{
+        type: String,
+        default: '.3rem'
     }
 })
 
@@ -34,9 +49,15 @@ let angle = computed(()=>{
     }
 })
 
+let borderSize = computed(()=>{
+    return props.borderSize;
+})
+
 </script>
 
 <style scoped lang="scss">
+
+$border-size:v-bind(borderSize);
 .score-container {
     position: relative;
     width: 100%;
@@ -79,32 +100,41 @@ let angle = computed(()=>{
 }
 
 .danger {
-    background-image: linear-gradient(180deg,#fdc5c5,#ffefef);
     color: #ff4e5c;
+    &.bg{
+        background-image: linear-gradient(180deg,#fdc5c5,#ffefef);
+        
+    }
     .circle-trans {
-        border: .3rem solid #fed5d4;
+        border: $border-size solid #fed5d4;
     }
 
     .circle-base {
-        border: .3rem solid #ff4e5c;
+        border: $border-size solid #ff4e5c;
     }
 }
 
 .warn {
-    background-image: linear-gradient(180deg,#ffe9cf,#fffaf5);
     color: #ff9103;
+    &.bg{
+        background-image: linear-gradient(180deg,#ffe9cf,#fffaf5);
+    
+    }
     .circle-trans,
     .circle-base {
-        border: .3rem solid #ff9103;
+        border: $border-size solid #ff9103;
     }
 }
 
 .green {
-    background-image: linear-gradient(180deg,#d7f5e9,#f3fcf8);
     color: #28c989;
+    &.bg{
+        background-image: linear-gradient(180deg,#d7f5e9,#f3fcf8);
+        
+    }
     .circle-trans,
     .circle-base {
-        border: .3rem solid #28c989;
+        border: $border-size solid #28c989;
     }
 
 }

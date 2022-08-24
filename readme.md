@@ -19,10 +19,10 @@ ______
      
 ##  重要！！！
    如果图没有正常加载等待修复resize bug即可
-**## ScoreCircle（百分比圆）**
+## ScoreCircle（百分比圆）
 
 ```html
- <ScoreCircle :score="10" :green="90" :warn="80"></ScoreCircle>
+ <ScoreCircle :score="10" :green="80" :warn="65" :border-size=".3rem" :show-bg="true" style="fontSize:3rem" ></ScoreCircle>
 ```
 
 `score`:中间显示的分数，区间[0,100]
@@ -31,5 +31,19 @@ ______
 
 `warn`:显示为黄色警告的阈值，`score`低于`green`显示红色危险，默认60
 
+`border-size`:控制边框一圈的粗细，默认`.3rem`
 
+`show-bg`:控制背景色的显示，默认`true`
+
+* 对组件的属性如`style`、`class`会附加在组建中间的数字上，可自定义数字样式
+* 组件的大小由父容器的宽度决定，自适应为正圆形，因此如果父容器高度小于宽度，会出现组件超出容器的情况
+* 使用可见`/test/js`页面
+
+## MDropDown（带名称下拉框）组件
+
+<MDropDown name="下拉3" @select="tapselect" :menu-list="menuList"></MDropDown>
       
+`name`:下拉框名称，显示在下拉框前
+`select`:下拉选择事件，返回`menu-list`绑定的数据中选择的`item`
+`menu-list`:下拉框绑定的列表
+* 使用可见首页
