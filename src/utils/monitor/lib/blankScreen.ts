@@ -29,7 +29,7 @@ export function blankScreen() {
   }
   // 刚开始页面内容为空，等页面渲染完成，再去做判断
   onload(function () {
-    let xElements, yElements;
+    let xElements, yElements, yXElements, yNavXElements;
     for (let i = 0; i < 9; i++) {
       //
       xElements = document.elementsFromPoint(
@@ -40,8 +40,19 @@ export function blankScreen() {
         window.innerWidth / 2,
         (window.innerHeight * i) / 10
       );//获取屏幕中间y轴方向上的点
+      yNavXElements = document.elementsFromPoint(
+        (window.innerWidth * i) / 10,
+        (window.innerHeight * i) / 10
+      );//获取屏幕中间y=-x轴方向上的点
+      yXElements = document.elementsFromPoint(
+        (window.innerWidth * (9-i)) / 10,
+        (window.innerHeight * i) / 10
+      );//获取屏幕中间y轴方向上的点
       isWrapper(xElements[0]);
       isWrapper(yElements[0]);
+      isWrapper(yNavXElements[0]);
+      isWrapper(yXElements[0]);
+
     }
     // 白屏
     if (emptyPoints >= 0) {

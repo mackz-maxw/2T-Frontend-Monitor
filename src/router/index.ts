@@ -54,6 +54,7 @@ const routes = [
     },
     {
       path: '/test',
+      name:"test",
       // 如果是根目录的话重定向到overview
       redirect:"/test/js",
       children:[
