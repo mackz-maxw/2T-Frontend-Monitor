@@ -39,6 +39,7 @@ import tracker from "../utils/tracker";
 // }
 
 export function proxyXHR() {
+  //代理xhr.open方法
   let oldOpen=XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open=new Proxy(oldOpen,{ 
     apply:function(target,thisArg,argumentsList:[method: string, url: string | URL, async: boolean, username?: string | null | undefined, password?: string | null | undefined]){
@@ -55,6 +56,7 @@ export function proxyXHR() {
         return target.apply(thisArg,argumentsList) 
     } 
 });
+//代理xhr.send方法
 let oldSend=XMLHttpRequest.prototype.send
   XMLHttpRequest.prototype.send=new Proxy(oldSend,{
     apply:function(target,thisArg,argumentsList:[body?: Document | XMLHttpRequestBodyInit | null | undefined]){
@@ -77,9 +79,9 @@ let oldSend=XMLHttpRequest.prototype.send
             params: argumentsList[0] || "", // 入参
           });
         };
-        thisArg.addEventListener("load", handler("load"), false);
-        thisArg.addEventListener("error", handler('error'), false);
-        thisArg.addEventListener("abort", handler('abort'), false);
+        thisArg.addEventListener("load", handler(), false);
+        thisArg.addEventListener("error", handler(), false);
+        thisArg.addEventListener("abort", handler(), false);
       }
       return target.apply(thisArg, argumentsList);
     } 

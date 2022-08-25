@@ -11,6 +11,7 @@ export function timing() {
     FMP = perfEntries[0];
     observer.disconnect(); // 不再观察了
   }).observe({ entryTypes: ["element"] }); // 观察页面中有意义的元素
+
   // 增加一个性能条目的观察者
   new PerformanceObserver((entryList, observer) => {
     const perfEntries = entryList.getEntries();
@@ -18,6 +19,7 @@ export function timing() {
     LCP = lastEntry;
     observer.disconnect(); // 不再观察了
   }).observe({ entryTypes: ["largest-contentful-paint"] }); // 观察页面中最大的元素
+  
   // 增加一个性能条目的观察者
   new PerformanceObserver((entryList, observer) => {
     const lastEvent = getLastEvent();
@@ -46,6 +48,8 @@ export function timing() {
   onload(function () {
     setTimeout(() => {
       const {
+        domainLookupStart,
+        domainLookupEnd,
         fetchStart,
         connectStart,
         connectEnd,
@@ -57,11 +61,13 @@ export function timing() {
         domContentLoadedEventStart,
         domContentLoadedEventEnd,
         loadEventStart,
-      } = window.performance.timing;
+      } = this.window.performance.getEntriesByType('navigation');
+      const orignTime=this.window.performance.orignTime;
       // 发送时间指标
       tracker.send({
         kind: "experience", // 用户体验指标
         type: "timing", // 统计每个阶段的时间
+        parseDNSTime:domainLookupEnd - domainLookupStart,//dns解析耗时
         connectTime: connectEnd - connectStart, // TCP连接耗时
         ttfbTime: responseStart - requestStart, // 首字节到达时间
         responseTime: responseEnd - responseStart, // response响应耗时
