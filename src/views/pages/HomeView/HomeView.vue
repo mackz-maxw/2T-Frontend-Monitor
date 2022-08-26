@@ -1,8 +1,14 @@
 <template>
-  <div class="common-layout">
+  <div>
     <el-container>
-      <el-aside width="200px">
-        <el-menu :router="true" :default-active="activeIndex" >
+      <el-aside width="200px" class="aside-left" :border="true">
+        <el-menu 
+        :default-active="$route.path" 
+        :router="true" 
+
+        class="menu-left"
+        active-text-color="#21d48f" 
+        :border="true">
           <el-menu-item index="/overview">
             <el-icon>
               <icon-menu />
@@ -43,13 +49,6 @@
 </template>
 
 <script lang="ts">
-// import Tabs from '../components/Tabs.vue';
-import { ref } from 'vue';
-
-const activeIndex = ref('/overview')
-// const handleSelect = (key: string, keyPath: string[]) => {
-//   console.log(key, keyPath)
-// }
 export default {
   components: {
     name: 'HomeView'
@@ -61,7 +60,10 @@ export default {
 .container {
   margin-top: 20px;
 }
-/* #menu-left{
+.aside-left{
+  border-right: 1px solid #dcdfe6;
+}
+.menu-left{
   border-right:0;
-} */
+}
 </style>
