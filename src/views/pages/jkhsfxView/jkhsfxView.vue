@@ -171,6 +171,15 @@ export default {
 </script>
 
 <style scoped>
-
-
+.list-group > a{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* .card-body > h5 > span{
+    vertical-align: middle;
+}
+.time{
+    font-size: 12px;
+} */
 </style>

@@ -151,107 +151,108 @@
         </div>
     </div>
 
-    <div class="row-title">
-        <div class="col-md-12 fw-bold fs-4">综合数据</div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>网站访问量Top 10</h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+    <div class="container-fluid">
+        <div class="row-title">
+            <div class="col-md-12 fw-bold fs-4">综合数据</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>网站访问量Top 10</h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>来源网站Top 10</h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+            <div class="col-md-6">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>来源网站Top 10</h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>城市名称访问用户量Top 10</h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
+            <div class="col-md-12">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>城市名称访问用户量Top 10</h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>设备型号用户量Top 10</h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>系统版本用户量Top 10</h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>应用版本访问用户量Top 10</h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>浏览器使用量Top 10 </h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>设备分辨率量Top 10 </h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-150">
+                    <div class="card-header">
+                        <h6>新用户次日留存率</h6>
+                    </div>
+                    <div class="card-body">
+                        <MCharts :option="option2" style="width: 100%; height: 500px" />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>设备型号用户量Top 10</h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>系统版本用户量Top 10</h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>应用版本访问用户量Top 10</h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>浏览器使用量Top 10 </h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>设备分辨率量Top 10 </h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-150">
-                <div class="card-header">
-                    <h6>新用户次日留存率</h6>
-                </div>
-                <div class="card-body">
-                    <MCharts :option="option2" style="width: 100%; height: 500px" />
-                </div>
-            </div>
-        </div>
-    </div>
-
 </template>
 
 
@@ -282,7 +283,7 @@ export default {
     /* text-align: center; */
     /* line-height: 10px; */
     height: 40px;
-    margin-top: -20px;
+    margin-top: -10px;
     /* margin-bottom: 10px; */
     justify-content: center;
     flex-direction: column;
@@ -301,5 +302,9 @@ export default {
 }  */
 #card-md12 {
     padding: 0px;
+}
+
+.fw-bold {
+    text-decoration: underline #21d48f solid;
 }
 </style>
