@@ -1,3 +1,4 @@
+
 <template>
     <nav class="navbar navbar-expand-lg navbar-light navigator">
         <div class="container-fluid">
@@ -75,4 +76,3 @@ export default {
 .nav-link:hover{
     color: #21d48f;
 }
-</style>
