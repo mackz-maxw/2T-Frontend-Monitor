@@ -10,30 +10,22 @@
         active-text-color="#21d48f" 
         :border="true">
           <el-menu-item index="/home/overview">
-            <el-icon>
-              <icon-menu />
-            </el-icon>
+            <img src="/img/about.svg" alt="icon" />
             <span>概览</span>
           </el-menu-item>
 
           <el-menu-item index="/home/healthstate">
-            <el-icon>
-              <icon-menu />
-            </el-icon>
+            <img src="/img/detect.svg" alt="icon" />
             <span>健康状况</span>
           </el-menu-item>
 
           <el-menu-item index="/home/performance">
-            <el-icon>
-              <icon-menu />
-            </el-icon>
+            <img src="/img/performance.svg" alt="icon" />
             <span>性能预览</span>
           </el-menu-item>
 
           <el-menu-item index="/home/map">
-            <el-icon>
-              <icon-menu />
-            </el-icon>
+            <img src="/img/region.svg" alt="icon" />
             <span>地域分布</span>
           </el-menu-item>
         </el-menu>
@@ -65,5 +57,8 @@ export default {
 }
 .menu-left{
   border-right:0;
+}
+img{
+  margin: 0 15px;
 }
 </style>
