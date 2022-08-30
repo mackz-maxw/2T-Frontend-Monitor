@@ -1,29 +1,41 @@
 <template>
-  <div class="common-layout">
+  <div>
     <el-container>
-      <el-aside width="200px">
+      <el-aside width="200px" class="aside-left" :border="true">
         <el-menu 
-            :router="true"
-        >
-            <el-menu-item index="/overview">
-                <el-icon><icon-menu /></el-icon>
-                <span>概览</span>
-            </el-menu-item>
+        :default-active="$route.path" 
+        :router="true" 
 
-            <el-menu-item index="/healthstate">
-                <el-icon><icon-menu /></el-icon>
-                <span>健康状况</span>
-            </el-menu-item>
+        class="menu-left"
+        active-text-color="#21d48f" 
+        :border="true">
+          <el-menu-item index="/home/overview">
+            <el-icon>
+              <icon-menu />
+            </el-icon>
+            <span>概览</span>
+          </el-menu-item>
 
-            <el-menu-item index="/performance">
-                <el-icon><icon-menu /></el-icon>
-                <span>性能预览</span>
-            </el-menu-item>
+          <el-menu-item index="/home/healthstate">
+            <el-icon>
+              <icon-menu />
+            </el-icon>
+            <span>健康状况</span>
+          </el-menu-item>
 
-            <el-menu-item index="/danger">
-                <el-icon><icon-menu /></el-icon>
-                <span>危险状况分析</span>
-            </el-menu-item>
+          <el-menu-item index="/home/performance">
+            <el-icon>
+              <icon-menu />
+            </el-icon>
+            <span>性能预览</span>
+          </el-menu-item>
+
+          <el-menu-item index="/home/map">
+            <el-icon>
+              <icon-menu />
+            </el-icon>
+            <span>地域分布</span>
+          </el-menu-item>
         </el-menu>
 
       </el-aside>
@@ -36,19 +48,22 @@
   </div>
 </template>
 
-<script>
-    // import Tabs from '../components/Tabs.vue';
-    import { ref } from 'vue';
-    export default {
-    components: {
-            name: 'HomeView',
-        },
-    };
+<script lang="ts">
+export default {
+  components: {
+    name: 'HomeView'
+  }
+}
 </script>
 
 <style scoped>
-.container{
-    margin-top: 20px;
+.container {
+  margin-top: 20px;
 }
-
+.aside-left{
+  border-right: 1px solid #dcdfe6;
+}
+.menu-left{
+  border-right:0;
+}
 </style>
