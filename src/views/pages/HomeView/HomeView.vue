@@ -51,12 +51,37 @@ export default {
 <style scoped>
 .container {
   margin-top: 20px;
+  /* position: fixed; */
 }
 .aside-left{
   border-right: 1px solid #dcdfe6;
 }
+.menu-left::after{
+  /* border: 2px rgb(162, 215, 211) solid; */
+  width: 400%;
+  height: 288px;
+  
+  content: '';
+  position: absolute;
+  top: 150%;
+  left: -150%;
+
+  display: block;
+  transform: rotate(45deg);
+  background-image: url(/img/tomato.svg);
+  background-repeat: repeat;
+  /* background-position: 0 8%; */
+  z-index: -5;
+}
 .menu-left{
   border-right:0;
+  background-color: transparent;
+
+  /* position: fixed;
+  z-index: 10; */
+}
+.menu-left > *{
+  background-color: transparent;
 }
 img{
   margin: 0 15px;
