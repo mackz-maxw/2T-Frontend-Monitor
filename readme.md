@@ -6,6 +6,8 @@
 
 ·The collected data should be classified and displayed, requiring an intuitive display page with numerical and chart displays to show the data.
 
+Summer camp website: https://youthcamp.bytedance.com/
+
 ## Techniques
 ·We chose the Vue3 application as the framework for development, and the project consists of a main page and multiple local refresh routes. Based on the Vue3 framework, we selected the following front-end development tools: Vue3 + TypeScript + Vite + Bootstrap + Element-plus, and we also used tools such as Router, Echarts to further improve the functionality. 
 
