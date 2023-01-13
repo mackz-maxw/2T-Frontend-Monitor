@@ -1,49 +1,25 @@
-# Vue 3 + TypeScript + Vite前端监控系统
-## 提交了网络请求相关api
-·url设置在src/service/api.service.js的第11行
+# Vue 3 + TypeScript + Vite frontend monitoring systerm
+## Requirements
+·Build a front-end monitoring system website to achieve data collection, rendering, and display. 
 
-·“server response error: ”开头的console提示在src/service/interceptors.service.js的第25行
+·Collect data includes: traffic data such as the number of visits to the monitored target page, link exceptions such as 404 errors on the target page, and code errors such as blank screens on the target page. 
 
+·The collected data should be classified and displayed, requiring an intuitive display page with numerical and chart displays to show the data.
 
-## 关于图表 
-封装文件在\src\views\pages\bars的userPie，具体实践请参考\src\views\pages的perfomanceView.vue和\src\views\pages\bars的option.js文件
-______
-用法: 1）在script里 import MCharts from "@/components/MCharts/MCharts.vue";
-      import { option1, option2 } from "自己的json";
-      <br>
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2）只需要去https://echarts.apache.org/examples/zh  (或类似的网站) 找到对应的JS代码，模仿json文件将网页提供的代码粘贴到JSON文件里面即可，注意!如有option={}以外的(i.e. var value = 7)  一般放在最上面   
-       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3)  在要插入的地方 输入类似 ```<HelloEcharts :option="option" />``` 具体实现与script相结合
-      <br>
-      <hr>
+## Techniques
+·We chose the Vue3 application as the framework for development, and the project consists of a main page and multiple local refresh routes. Based on the Vue3 framework, we selected the following front-end development tools: Vue3 + TypeScript + Vite + Bootstrap + Element-plus, and we also used tools such as Router, Echarts to further improve the functionality. 
 
-     
-##  重要！！！
-   如果图没有正常加载等待修复resize bug即可
-## ScoreCircle（百分比圆）
+·For the back-end, we chose Java to construct the data transmission level structure and Mysql database. We established a clear, stable and component-based code logic. The back-end and front-end are separated and data is transmitted through network requests. We also did some research on web architecture and presentation.
 
-```html
- <ScoreCircle :score="10" :green="80" :warn="65" :border-size=".3rem" :show-bg="true" style="fontSize:3rem" ></ScoreCircle>
-```
+## Efforts
+I participated in the development of front-end data collection APIs, front-end data collection pages and some UI components. 
 
-`score`:中间显示的分数，区间[0,100]
+·In the development of the APIs, I wrote the code for collecting data in different categories, and used XMLHTTP requests to report data and separated general requests from data reporting requests. For data display, I used Vue3 to build the project framework, Bootstrap to organize the webpage layout and Element-UI to beautify the page. 
 
-`green`:显示为绿色良好的阈值，`score`低于`green`显示黄色警告，默认85
+The data that needs to be collected is divided into three categories: program errors, traffic monitoring and performance monitoring. 
 
-`warn`:显示为黄色警告的阈值，`score`低于`green`显示红色危险，默认60
+·In program errors, I monitored the existence of blank screen errors by getting the HTML document at a specific point on the page and monitored JS errors and timeout tasks by listening to browser window events. In traffic monitoring, I mainly used XMLHTTP requests and fetch API to get requests and their details. 
 
-`border-size`:控制边框一圈的粗细，默认`.3rem`
+·In performance monitoring, I used the observe method to monitor the attributes of elements on the page. 
 
-`show-bg`:控制背景色的显示，默认`true`
-
-* 对组件的属性如`style`、`class`会附加在组建中间的数字上，可自定义数字样式
-* 组件的大小由父容器的宽度决定，自适应为正圆形，因此如果父容器高度小于宽度，会出现组件超出容器的情况
-* 使用可见`/test/js`页面
-
-## MDropDown（带名称下拉框）组件
-
-<MDropDown name="下拉3" @select="tapselect" :menu-list="menuList"></MDropDown>
-      
-`name`:下拉框名称，显示在下拉框前
-`select`:下拉选择事件，返回`menu-list`绑定的数据中选择的`item`
-`menu-list`:下拉框绑定的列表
-* 使用可见首页
+The learning and application of these technical means have given me a deeper understanding of the structure and steps of front-end and back-end communication, such as the MVVM framework, and also have given me a sense of some design patterns, such as the observer design pattern and the asynchronous execution of programs.
